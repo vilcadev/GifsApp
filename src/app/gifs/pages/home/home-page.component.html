@@ -1,0 +1,28 @@
+<div class="row p-3">
+  <div class="col-12" style="margin-left: 35px;  width:50%; color: whitesmoke!important; margin-bottom: 25px;">
+    <!-- Busqueda -->
+    <gifs-search-box></gifs-search-box>
+  </div>
+
+  <div class="col-12 pt-2">
+
+    <!-- Lista de gifs -->
+    <!-- card-list -->
+
+    <div *ngIf="gifs.length>0; else noGifsMessage">
+      <gifs-card-list [gifs]="gifs"></gifs-card-list>
+    </div>
+
+    <ng-template #noGifsMessage>
+
+	<div id="notfound">
+		<div class="notfound">
+			<div class="notfound-404">
+				<h1><i class="fa-solid fa-magnifying-glass"></i></h1>
+			</div>
+			<h2>Comienza Buscando Un Gif</h2>
+		</div>
+	</div>
+    </ng-template>
+  </div>
+</div>
